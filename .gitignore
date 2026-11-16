@@ -8,3 +8,27 @@ blender_mcp/
 .DS_Store
 Thumbs.db
 *.swp
+
+# Purchased 3D assets - licence probably forbids sharing. Never commit these.
+GasCylinder-Trolley_Files/
+# 3D model / scene files
+*.stl
+*.obj
+*.mtl
+*.fbx
+*.blend
+*.dae
+*.3ds
+*.max
+*.ma
+*.mb
+*.gltf
+*.glb
+*.ply
+*.uasset
+*.edm
+# Texture source files from purchased packs
+*.tga
+*.psd
+*.dds
+*.exr
