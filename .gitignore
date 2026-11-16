@@ -1,0 +1,10 @@
+blender_mcp/
+
+# Blender backups/autosaves
+*.blend1
+*.blend2
+
+# OS/editor clutter
+.DS_Store
+Thumbs.db
+*.swp
