@@ -25,6 +25,19 @@ A DCS World mod that shows a visible ground crew around a parked F-14.
 2. Prepare it: keep an untouched high-detail copy for baking, delete any base/stand, scale to real-world metres, origin at bottom centre (ground contact), apply transforms, reduce to game-ready triangle count + 2 lower LODs, give everything clear names, save as `.blend` in this folder.
 3. Bake detail/textures, export to `.edm` (on Windows), hook into DCS and the Lua script.
 
+## Asset status
+### Gas cylinder trolley: `gas_cylinder_trolley.blend` (prepared 2026-11-16, not in git)
+- Source: `GasCylinder-Trolley_Files/Unreal_Export/Trolley/SM_Trolly_01.fbx`. A game model with good UVs and PBR textures, and no base/stand.
+- Real size 0.58 × 0.79 × 1.42 m. Origin at bottom centre (z=0 is the ground). All transforms applied. The front (foot plate) points +X.
+- Collections:
+  - `Trolley_HighPoly`: the original geometry with both UV sets, kept for baking.
+  - `Trolley_Game`: `Trolley_LOD0` (6,024 tris, original geometry), `Trolley_LOD1` (1,528), `Trolley_LOD2` (298). The game LODs have only the `UVMap` UV set (Lightmap removed). All LODs sit at the origin; LOD1/LOD2 are hidden in the viewport.
+- One material `M_Trolley`. Textures are linked by **relative path** (`//GasCylinder-Trolley_Files/...`), so copy the `.blend` and that folder together, keeping the same layout.
+  - `T_Trolley_ARM` = R: AO, G: roughness, B: metallic. This is the same channel layout as DCS's RoughMet texture.
+  - `T_Trolley_N` is a DirectX-style (Unreal) normal map; the material flips green for the Blender preview. Check which convention DCS expects before export.
+  - The FBX import set Alpha to 0.2; it is fixed to 1.0.
+- Not done yet: `.dds` conversion (probably 1024 px), EDM export on Windows, checking DCS forward axis, and the 4 gas cylinder models.
+
 ## Working with the user
 - The user is new to Blender: explain things simply.
 - Work in stages and stop after each one for the user to check.
